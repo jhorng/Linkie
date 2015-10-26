@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['par',['PAR',['../structDMA__Stream__TypeDef.html#adbeac1d47cb85ab52dac71d520273947',1,'DMA_Stream_TypeDef']]],
+  ['patt2',['PATT2',['../structFMC__Bank2__3__TypeDef.html#af40ee5c849352ce62ce3bede53c077d8',1,'FMC_Bank2_3_TypeDef']]],
+  ['patt3',['PATT3',['../structFMC__Bank2__3__TypeDef.html#a538ae21bafacce1a7b5f82dbe060ae4a',1,'FMC_Bank2_3_TypeDef']]],
+  ['patt4',['PATT4',['../structFMC__Bank4__TypeDef.html#aaf79bad7e7caaa40b5f830aa06f4c655',1,'FMC_Bank4_TypeDef']]],
+  ['pcr2',['PCR2',['../structFMC__Bank2__3__TypeDef.html#a683944fc2dc9071838516a61211460ba',1,'FMC_Bank2_3_TypeDef']]],
+  ['pcr3',['PCR3',['../structFMC__Bank2__3__TypeDef.html#a978915d68eff7bc5534c0a9b1b39e55d',1,'FMC_Bank2_3_TypeDef']]],
+  ['pcr4',['PCR4',['../structFMC__Bank4__TypeDef.html#a8e32753b3bf53f12290a16ce3439cb57',1,'FMC_Bank4_TypeDef']]],
+  ['pfcr',['PFCR',['../structLTDC__Layer__TypeDef.html#a401b8bbdd7d666b112a747b1a6d163ae',1,'LTDC_Layer_TypeDef']]],
+  ['pio4',['PIO4',['../structFMC__Bank4__TypeDef.html#a0febbe4cf989073ee8f5ec3ae2eab093',1,'FMC_Bank4_TypeDef']]],
+  ['pllcfgr',['PLLCFGR',['../structRCC__TypeDef.html#a2a7ccb4e23cb05a574f243f6278b7b26',1,'RCC_TypeDef']]],
+  ['plli2scfgr',['PLLI2SCFGR',['../structRCC__TypeDef.html#ac3beb02dccd9131d6ce55bb29c5fa69f',1,'RCC_TypeDef']]],
+  ['pllsaicfgr',['PLLSAICFGR',['../structRCC__TypeDef.html#ac4b6f819b8e4f7981b998bd75dafcbce',1,'RCC_TypeDef']]],
+  ['pmc',['PMC',['../structSYSCFG__TypeDef.html#ab5c47c570566cb8ff9d0436c17cc9241',1,'SYSCFG_TypeDef']]],
+  ['pmem2',['PMEM2',['../structFMC__Bank2__3__TypeDef.html#a6462068f44050e8eb926fac9fe4616f1',1,'FMC_Bank2_3_TypeDef']]],
+  ['pmem3',['PMEM3',['../structFMC__Bank2__3__TypeDef.html#a6f713b17377ce443685592c7a07a0074',1,'FMC_Bank2_3_TypeDef']]],
+  ['pmem4',['PMEM4',['../structFMC__Bank4__TypeDef.html#a0360a569f25a4df252938828cd39cd4e',1,'FMC_Bank4_TypeDef']]],
+  ['power',['POWER',['../structSDIO__TypeDef.html#a7c156bc55f6d970a846a459d57a9e940',1,'SDIO_TypeDef']]],
+  ['pr',['PR',['../structEXTI__TypeDef.html#a133294b87dbe6a01e8d9584338abc39a',1,'EXTI_TypeDef::PR()'],['../structIWDG__TypeDef.html#a5f2717885ff171e686e0347af9e6b68d',1,'IWDG_TypeDef::PR()']]],
+  ['prer',['PRER',['../structRTC__TypeDef.html#a5f43a11e0873212f598e41db5f2dcf6a',1,'RTC_TypeDef']]],
+  ['psc',['PSC',['../structTIM__TypeDef.html#ad03c852f58077a11e75f8af42fa6d921',1,'TIM_TypeDef']]],
+  ['pupdr',['PUPDR',['../structGPIO__TypeDef.html#a44ada3bfbe891e2efc1e06bda4c8014e',1,'GPIO_TypeDef']]]
+];

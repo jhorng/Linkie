@@ -38,7 +38,6 @@ struct GPIO_t{
 #define PIN_14			14
 #define PIN_15			15
 
-
 #define GPIO_MODE_INTPUT	0
 #define GPIO_MODE_OUTPUT	1
 #define GPIO_MODE_ALTFUNC	2

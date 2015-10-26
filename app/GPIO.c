@@ -1,4 +1,6 @@
 #include "GPIO.h"
+#include "Rcc.h"
+#include "stm32f4xx_hal_gpio.h"
 #include "stm32f4xx_hal_rcc.h"
 
 void configurePin(int mode, int pinNum, GPIO *port){
@@ -8,15 +10,15 @@ void configurePin(int mode, int pinNum, GPIO *port){
 	//__HAL_RCC_GPIOB_CLK_ENABLE();
 	//__HAL_RCC_GPIOC_CLK_ENABLE();
 
-	int *ptrReset = (int *)0x40023810;
-	ptrReset[0] = 0xFFFFFFB9;
+	//int *ptrReset = (int *)0x40023810;
+	//ptrReset[0] = 0xFFFFFFB9;
 
-	int *ptrSet = (int *)0x40023830;
-	ptrSet[0] = 0x00100046;
+	//int *ptrSet = (int *)0x40023830;
+	//ptrSet[0] = 0x00100046;
 
-	//gpioUnresetEnableClock(PORTG);
-	//gpioUnresetEnableClock(PORTB);
-	//gpioUnresetEnableClock(PORTC);
+	gpioUnresetEnableClock(PORTG);
+	gpioUnresetEnableClock(PORTB);
+	gpioUnresetEnableClock(PORTC);
 
 	port->MODER &= ~(3 << (pinNum * 2));
 	port->MODER |= mode << (pinNum * 2);
@@ -68,7 +70,6 @@ void configurePin(int mode, int pinNum, GPIO *port){
 	HAL_GPIO_Init(port, &gpio);
 */
 }
-
 
 void writeOne(int pinNum, GPIO_TypeDef *port){
 	HAL_GPIO_WritePin(port, pinNum, GPIO_PIN_SET);
