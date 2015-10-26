@@ -4,9 +4,19 @@
 void configurePin(int mode, int pinNum, GPIO *port){
 	GPIO_InitTypeDef gpio;
 
-	__HAL_RCC_GPIOG_CLK_ENABLE();
-	__HAL_RCC_GPIOB_CLK_ENABLE();
-	__HAL_RCC_GPIOC_CLK_ENABLE();
+	//__HAL_RCC_GPIOG_CLK_ENABLE();
+	//__HAL_RCC_GPIOB_CLK_ENABLE();
+	//__HAL_RCC_GPIOC_CLK_ENABLE();
+
+	int *ptrReset = (int *)0x40023810;
+	ptrReset[0] = 0xFFFFFFB9;
+
+	int *ptrSet = (int *)0x40023830;
+	ptrSet[0] = 0x00100046;
+
+	//gpioUnresetEnableClock(PORTG);
+	//gpioUnresetEnableClock(PORTB);
+	//gpioUnresetEnableClock(PORTC);
 
 	port->MODER &= ~(3 << (pinNum * 2));
 	port->MODER |= mode << (pinNum * 2);

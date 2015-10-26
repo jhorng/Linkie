@@ -72,8 +72,8 @@
   <Components path="./"/>
   <LocalComponents/>
   <Files>
-    <File name="GPIO.c" path="app/GPIO.c" type="1"/>
     <File name="Hardware" path="" type="2"/>
+    <File name="GPIO.c" path="app/GPIO.c" type="1"/>
     <File name="Hardware/stm32f4xx_hal.h" path="../STM32Cube_FW_F4_V1.5.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h" type="1"/>
     <File name="Hardware/stm32f4xx_hal_gpio.c" path="../STM32Cube_FW_F4_V1.5.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c" type="1"/>
     <File name="Core/core_cm4.h" path="../STM32Cube_FW_F4_V1.5.0/Drivers/CMSIS/Include/core_cm4.h" type="1"/>
