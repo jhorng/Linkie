@@ -1,6 +1,6 @@
 #include "stm32f4xx.h"
-#include "stm32f4xx_hal_gpio.h"
 #include "GPIO.h"
+#include "RCC.h"
 
 void delay(uint32_t delayCount){
 	while(delayCount != 0){
@@ -16,15 +16,15 @@ int main(void)
 	configurePin(GPIO_MODE_OUTPUT, PIN_5, PORTC);
 
 	while(1){
-		writeOne(GPIO_PIN_13, GPIOG);
-		writeOne(GPIO_PIN_14, GPIOG);
-		writeOne(GPIO_PIN_13, GPIOB);
-		writeOne(GPIO_PIN_5, GPIOC);
+		writeOne(PIN_13, PORTG);
+		writeOne(PIN_14, PORTG);
+		writeOne(PIN_13, PORTB);
+		writeOne(PIN_5, PORTC);
 		delay(500000);
-		writeZero(GPIO_PIN_13, GPIOG);
-		writeZero(GPIO_PIN_14, GPIOG);
-		writeZero(GPIO_PIN_13, GPIOB);
-		writeZero(GPIO_PIN_5, GPIOC);
+		writeZero(PIN_13, PORTG);
+		writeZero(PIN_14, PORTG);
+		writeZero(PIN_13, PORTB);
+		writeZero(PIN_5, PORTC);
 		delay(500000);
 	}
 

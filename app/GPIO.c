@@ -1,10 +1,10 @@
 #include "GPIO.h"
-#include "Rcc.h"
-#include "stm32f4xx_hal_gpio.h"
-#include "stm32f4xx_hal_rcc.h"
+#include "RCC.h"
+//#include "stm32f4xx_hal_gpio.h"
+//#include "stm32f4xx_hal_rcc.h"
 
 void configurePin(int mode, int pinNum, GPIO *port){
-	GPIO_InitTypeDef gpio;
+	//GPIO_InitTypeDef gpio;
 
 	//__HAL_RCC_GPIOG_CLK_ENABLE();
 	//__HAL_RCC_GPIOB_CLK_ENABLE();
@@ -16,9 +16,7 @@ void configurePin(int mode, int pinNum, GPIO *port){
 	//int *ptrSet = (int *)0x40023830;
 	//ptrSet[0] = 0x00100046;
 
-	gpioUnresetEnableClock(PORTG);
-	gpioUnresetEnableClock(PORTB);
-	gpioUnresetEnableClock(PORTC);
+	gpioUnresetEnableClock(port);
 
 	port->MODER &= ~(3 << (pinNum * 2));
 	port->MODER |= mode << (pinNum * 2);
@@ -71,10 +69,23 @@ void configurePin(int mode, int pinNum, GPIO *port){
 */
 }
 
+/*
 void writeOne(int pinNum, GPIO_TypeDef *port){
 	HAL_GPIO_WritePin(port, pinNum, GPIO_PIN_SET);
 }
 
-void writeZero(int pinNum, GPIO_TypeDef *port){
+//void writeZero(int pinNum, GPIO_TypeDef *port){
 	HAL_GPIO_WritePin(port, pinNum, GPIO_PIN_RESET);
 }
+*/
+
+void writeOne(uint16_t pinNum, GPIO *port){
+	port->ODR &= ~( 1 << (pinNum));
+	port->ODR |= 1 << (pinNum);
+}
+
+void writeZero(uint16_t pinNum, GPIO *port){
+	port->ODR &= ~( 1 << (pinNum));
+	port->ODR |= 0 << (pinNum);
+}
+

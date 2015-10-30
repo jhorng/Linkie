@@ -1,13 +1,8 @@
-#ifndef __Rcc_H__
-#define __Rcc_H__
+#ifndef __RCC_H__
+#define __RCC_H__
 
 #include <stdint.h>
 #include "GPIO.h"
-#include "stm32f4xx_hal_gpio.h"
-
-#define RCC_BASE_ADDRESS	0x40023830
-
-#define RCC	((Rcc *)RCC_BASE_ADDRESS)
 
 typedef struct Rcc_t Rcc;
 struct Rcc_t{
@@ -59,6 +54,8 @@ struct Rcc_t{
 #define GPIOJ_bit	9
 #define GPIOK_bit	10
 
+#define Rcc_reg	((Rcc*)0x40023800)
+
 void gpioUnresetEnableClock(GPIO *port);
 
-#endif // __Rcc_H__
+#endif // __RCC_H__

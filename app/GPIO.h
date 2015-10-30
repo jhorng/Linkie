@@ -2,7 +2,6 @@
 #define __GPIO_H__
 
 #include <stdint.h>
-#include "stm32f4xx_hal_gpio.h"
 
 #define GPIO_OUTPUT		GPIO_MODE_OUTPUT_PP
 #define GPIO_INPUT		GPIO_MODE_INPUT_PP
@@ -48,16 +47,22 @@ struct GPIO_t{
 #define GPIO_HIGH_SPEED				2
 #define GPIO_VERY_HIGH_SPEED		3
 
-#define GPIOG_BASE_ADDRESS	0x40021800
+#define GPIOA_BASE_ADDRESS	0x40020000
 #define GPIOB_BASE_ADDRESS	0x40020400
 #define GPIOC_BASE_ADDRESS	0x40020800
+#define GPIOD_BASE_ADDRESS	0x40020C00
+#define GPIOE_BASE_ADDRESS	0x40021000
+#define GPIOF_BASE_ADDRESS	0x40021400
+#define GPIOG_BASE_ADDRESS	0x40021800
 
 #define PORTG	((GPIO *)GPIOG_BASE_ADDRESS)
 #define PORTB	((GPIO *)GPIOB_BASE_ADDRESS)
 #define PORTC	((GPIO *)GPIOC_BASE_ADDRESS)
 
 void configurePin(int mode, int pinNumber, GPIO *port);
-void writeOne(int pinNumber, GPIO_TypeDef *port);
-void writeZero(int pinNumber, GPIO_TypeDef *port);
+void writeOne(uint16_t pinNum, GPIO *port);
+void writeZero(uint16_t pinNum, GPIO *port);
+//void writeOne(int pinNumber, GPIO_TypeDef *port);
+//void writeZero(int pinNumber, GPIO_TypeDef *port);
 
 #endif // __GPIO_H__

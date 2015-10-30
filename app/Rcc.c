@@ -1,30 +1,8 @@
-#include "Rcc.h"
+#include "RCC.h"
 #include "GPIO.h"
-#include "stm32f4xx_hal_gpio.h"
 
-void gpioUnresetEnableClock(GPIO *port){
-	Rcc *rcc;
-	int portAddr = (int *)(port);
-
-	switch(portAddr){
-	case GPIOG_BASE_ADDRESS:
-		rcc->RCC_AHB1RSTR &= ~(1 << GPIOG_bit);
-		rcc->RCC_AHB1RSTR |= 1 << GPIOG_bit;
-		rcc->RCC_AHB1ENR &= ~(1 << GPIOG_bit);
-		rcc->RCC_AHB1ENR |= 1 << GPIOG_bit;
-		break;
-	case GPIOB_BASE_ADDRESS:
-		rcc->RCC_AHB1RSTR &= ~(1 << GPIOB_bit);
-		rcc->RCC_AHB1RSTR |= 1 << GPIOB_bit;
-		rcc->RCC_AHB1ENR &= ~(1 << GPIOB_bit);
-		rcc->RCC_AHB1ENR |= 1 << GPIOB_bit;
-		break;
-	case GPIOC_BASE_ADDRESS:
-		rcc->RCC_AHB1RSTR &= ~(1 << GPIOC_bit);
-		rcc->RCC_AHB1RSTR |= 1 << GPIOC_bit;
-		rcc->RCC_AHB1ENR &= ~(1 << GPIOC_bit);
-		rcc->RCC_AHB1ENR |= 1 << GPIOC_bit;
-		break;
-	default: break;
-	}
+void gpioUnresetEnableClock(GPIO* port){
+	int valShift = ((int)port - (0x40020000))/(0x400);
+	Rcc_reg->RCC_AHB1RSTR &= ~(1 << (valShift));
+	Rcc_reg->RCC_AHB1ENR |= (0x00100000 | ~(0 << (valShift)));
 }
