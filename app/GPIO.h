@@ -37,7 +37,7 @@ struct GPIO_t{
 #define PIN_14			14
 #define PIN_15			15
 
-#define GPIO_MODE_INTPUT	0
+#define GPIO_MODE_INPUT		0
 #define GPIO_MODE_OUTPUT	1
 #define GPIO_MODE_ALTFUNC	2
 #define GPIO_MODE_ANALOG	3
@@ -47,6 +47,11 @@ struct GPIO_t{
 #define GPIO_HIGH_SPEED				2
 #define GPIO_VERY_HIGH_SPEED		3
 
+#define GPIO_NO_PULLUP_PULLDOWN		0
+#define GPIO_PULL_UP				1
+#define GPIO_PULL_DOWN				2
+#define GPIO_RESERVED				3
+
 #define GPIOA_BASE_ADDRESS	0x40020000
 #define GPIOB_BASE_ADDRESS	0x40020400
 #define GPIOC_BASE_ADDRESS	0x40020800
@@ -55,11 +60,16 @@ struct GPIO_t{
 #define GPIOF_BASE_ADDRESS	0x40021400
 #define GPIOG_BASE_ADDRESS	0x40021800
 
-#define PORTG	((GPIO *)GPIOG_BASE_ADDRESS)
+#define PORTA	((GPIO *)GPIOA_BASE_ADDRESS)
 #define PORTB	((GPIO *)GPIOB_BASE_ADDRESS)
 #define PORTC	((GPIO *)GPIOC_BASE_ADDRESS)
+#define PORTD	((GPIO *)GPIOD_BASE_ADDRESS)
+#define PORTE	((GPIO *)GPIOE_BASE_ADDRESS)
+#define PORTF	((GPIO *)GPIOF_BASE_ADDRESS)
+#define PORTG	((GPIO *)GPIOG_BASE_ADDRESS)
 
-void configurePin(int mode, int pinNumber, GPIO *port);
+void configurePin(int mode, int pinNum, GPIO *port);
+void pullUpDown(int pinNum, GPIO *port, int pull);
 void writeOne(uint16_t pinNum, GPIO *port);
 void writeZero(uint16_t pinNum, GPIO *port);
 //void writeOne(int pinNumber, GPIO_TypeDef *port);

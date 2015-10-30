@@ -14,18 +14,22 @@ int main(void)
 	configurePin(GPIO_MODE_OUTPUT, PIN_14, PORTG);
 	configurePin(GPIO_MODE_OUTPUT, PIN_13, PORTB);
 	configurePin(GPIO_MODE_OUTPUT, PIN_5, PORTC);
+	configurePin(GPIO_MODE_INPUT, PIN_0, PORTA);
+	pullUpDown(PIN_0, PORTA, GPIO_PULL_DOWN);
 
 	while(1){
-		writeOne(PIN_13, PORTG);
-		writeOne(PIN_14, PORTG);
-		writeOne(PIN_13, PORTB);
-		writeOne(PIN_5, PORTC);
-		delay(500000);
-		writeZero(PIN_13, PORTG);
-		writeZero(PIN_14, PORTG);
-		writeZero(PIN_13, PORTB);
-		writeZero(PIN_5, PORTC);
-		delay(500000);
+		if((PORTA->IDR & 1) == 1){
+			writeOne(PIN_13, PORTG);
+			writeOne(PIN_14, PORTG);
+			writeOne(PIN_13, PORTB);
+			writeOne(PIN_5, PORTC);
+			delay(500000);
+			writeZero(PIN_13, PORTG);
+			writeZero(PIN_14, PORTG);
+			writeZero(PIN_13, PORTB);
+			writeZero(PIN_5, PORTC);
+			delay(500000);
+		}
 	}
 
 

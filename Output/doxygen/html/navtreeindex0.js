@@ -1,7 +1,7 @@
 var NAVTREEINDEX0 =
 {
 "GPIO_8h_source.html":[1,0,0],
-"Rcc_8h_source.html":[1,0,1],
+"RCC_8h_source.html":[1,0,1],
 "dir_d422163b96683743ed3963d4aac17747.html":[1,0],
 "files.html":[1],
 "group__CMSIS.html":[0,0],

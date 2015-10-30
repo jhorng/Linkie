@@ -62715,8 +62715,8 @@
     <file>GPIO.c</file>
     <file>GPIO.h</file>
     <file>main.c</file>
-    <file>Rcc.c</file>
-    <file>Rcc.h</file>
+    <file>RCC.c</file>
+    <file>RCC.h</file>
     <file>stm32f429xx.h</file>
     <file>stm32f4xx.h</file>
     <file>stm32f4xx_hal_conf.h</file>

@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Project: C:/Users/D203C-01/CoIDE/workspace/Linkie/app/Rcc.h Source File</title>
+<title>Project: C:/Users/D203C-01/CoIDE/workspace/Linkie/app/RCC.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -59,7 +59,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('Rcc_8h_source.html','');});
+$(document).ready(function(){initNavTree('RCC_8h_source.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -78,75 +78,72 @@ $(document).ready(function(){initNavTree('Rcc_8h_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Rcc.h</div>  </div>
+<div class="title">RCC.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef __Rcc_H__</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define __Rcc_H__</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef __RCC_H__</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define __RCC_H__</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;GPIO.h&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;stm32f4xx_hal_gpio.h&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define RCC_BASE_ADDRESS    0x40023830</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define RCC ((Rcc *)RCC_BASE_ADDRESS)</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structRcc__t.html">Rcc_t</a> <a class="code" href="structRcc__t.html">Rcc</a>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="structRcc__t.html">   13</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structRcc__t.html">Rcc_t</a>{</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_CR;           <span class="comment">// RCC clock control register (0x00)</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_PLLCFGR;      <span class="comment">// RCC PLL configuration register (0x04)</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_CFGR;         <span class="comment">// RCC clock configuration register (0x08)</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_CIR;          <span class="comment">// RCC clock interrupt register (0x0C)</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_AHB1RSTR;     <span class="comment">// RCC AHB1 peripheral reset register (0x10)</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_AHB2RSTR;     <span class="comment">// RCC AHB2 peripheral reset register</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_AHB3RSTR;     <span class="comment">// RCC AHB3 peripheral reset register</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">volatile</span> uint32_t reserved_0;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_APB1RSTR;     <span class="comment">// RCC APB1 peripheral reset register</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_APB2RSTR;     <span class="comment">// RCC APB2 peripheral reset register</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">volatile</span> uint32_t reserved_1;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">volatile</span> uint32_t reserved_2;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_AHB1ENR;      <span class="comment">// RCC AHB1 peripheral clock enable register</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_AHB2ENR;      <span class="comment">// RCC AHB2 peripheral clock enable register</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_AHB3ENR;      <span class="comment">// RCC AHB3 peripheral clock enable register</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">volatile</span> uint32_t reserved_3;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_APB1ENR;      <span class="comment">// RCC APB1 peripheral clock enable register</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_APB2ENR;      <span class="comment">// RCC APB2 peripheral clock enable register</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">volatile</span> uint32_t reserved_4;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">volatile</span> uint32_t reserved_5;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_AHB1LPENR;    <span class="comment">// RCC AHB1 peripheral clock enable in low power mode register</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_AHB2LPENR;    <span class="comment">// RCC AHB2 peripheral clock enable in low power mode register</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_AHB3LPENR;    <span class="comment">// RCC AHB3 peripheral clock enable in low power mode register</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">volatile</span> uint32_t reserved_6;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_APB1LPENR;    <span class="comment">// RCC APB1 peripheral clock enable in low power mode register</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_APB2LPENR;    <span class="comment">// RCC APB2 peripheral clock enable in low power mode register</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">volatile</span> uint32_t reserved_7;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">volatile</span> uint32_t reserved_8;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_BDCR;         <span class="comment">// RCC Backup domain control register</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_CSR;          <span class="comment">// RCC clock control &amp; status register</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">volatile</span> uint32_t reserved_9;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">volatile</span> uint32_t reserved_A;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_SSCGR;        <span class="comment">// RCC spread spectrum clock generation register</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_PLLI2SCFGR;   <span class="comment">// RCC PLLI2S configuration register</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;};</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#define GPIOA_bit   0</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define GPIOB_bit   1</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define GPIOC_bit   2</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define GPIOD_bit   3</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define GPIOE_bit   4</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define GPIOF_bit   5</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define GPIOG_bit   6</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define GPIOH_bit   7</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define GPIOI_bit   8</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define GPIOJ_bit   9</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define GPIOK_bit   10</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keywordtype">void</span> gpioUnresetEnableClock(<a class="code" href="structGPIO__t.html">GPIO</a> *port);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#endif // __Rcc_H__</span></div>
-<div class="ttc" id="structRcc__t_html"><div class="ttname"><a href="structRcc__t.html">Rcc_t</a></div><div class="ttdef"><b>Definition:</b> Rcc.h:13</div></div>
-<div class="ttc" id="structGPIO__t_html"><div class="ttname"><a href="structGPIO__t.html">GPIO_t</a></div><div class="ttdef"><b>Definition:</b> GPIO.h:11</div></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structRcc__t.html">Rcc_t</a> <a class="code" href="structRcc__t.html">Rcc</a>;</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="structRcc__t.html">    8</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structRcc__t.html">Rcc_t</a>{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_CR;           <span class="comment">// RCC clock control register (0x00)</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_PLLCFGR;      <span class="comment">// RCC PLL configuration register (0x04)</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_CFGR;         <span class="comment">// RCC clock configuration register (0x08)</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_CIR;          <span class="comment">// RCC clock interrupt register (0x0C)</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_AHB1RSTR;     <span class="comment">// RCC AHB1 peripheral reset register (0x10)</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_AHB2RSTR;     <span class="comment">// RCC AHB2 peripheral reset register</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_AHB3RSTR;     <span class="comment">// RCC AHB3 peripheral reset register</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">volatile</span> uint32_t reserved_0;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_APB1RSTR;     <span class="comment">// RCC APB1 peripheral reset register</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_APB2RSTR;     <span class="comment">// RCC APB2 peripheral reset register</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">volatile</span> uint32_t reserved_1;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">volatile</span> uint32_t reserved_2;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_AHB1ENR;      <span class="comment">// RCC AHB1 peripheral clock enable register</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_AHB2ENR;      <span class="comment">// RCC AHB2 peripheral clock enable register</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_AHB3ENR;      <span class="comment">// RCC AHB3 peripheral clock enable register</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">volatile</span> uint32_t reserved_3;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_APB1ENR;      <span class="comment">// RCC APB1 peripheral clock enable register</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_APB2ENR;      <span class="comment">// RCC APB2 peripheral clock enable register</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">volatile</span> uint32_t reserved_4;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">volatile</span> uint32_t reserved_5;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_AHB1LPENR;    <span class="comment">// RCC AHB1 peripheral clock enable in low power mode register</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_AHB2LPENR;    <span class="comment">// RCC AHB2 peripheral clock enable in low power mode register</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_AHB3LPENR;    <span class="comment">// RCC AHB3 peripheral clock enable in low power mode register</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">volatile</span> uint32_t reserved_6;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_APB1LPENR;    <span class="comment">// RCC APB1 peripheral clock enable in low power mode register</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_APB2LPENR;    <span class="comment">// RCC APB2 peripheral clock enable in low power mode register</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">volatile</span> uint32_t reserved_7;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">volatile</span> uint32_t reserved_8;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_BDCR;         <span class="comment">// RCC Backup domain control register</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_CSR;          <span class="comment">// RCC clock control &amp; status register</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">volatile</span> uint32_t reserved_9;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">volatile</span> uint32_t reserved_A;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_SSCGR;        <span class="comment">// RCC spread spectrum clock generation register</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">volatile</span> uint32_t RCC_PLLI2SCFGR;   <span class="comment">// RCC PLLI2S configuration register</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#define GPIOA_bit   0</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define GPIOB_bit   1</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define GPIOC_bit   2</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define GPIOD_bit   3</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define GPIOE_bit   4</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define GPIOF_bit   5</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define GPIOG_bit   6</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define GPIOH_bit   7</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define GPIOI_bit   8</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define GPIOJ_bit   9</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define GPIOK_bit   10</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#define Rcc_reg ((Rcc*)0x40023800)</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keywordtype">void</span> gpioUnresetEnableClock(<a class="code" href="structGPIO__t.html">GPIO</a> *port);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif // __RCC_H__</span></div>
+<div class="ttc" id="structRcc__t_html"><div class="ttname"><a href="structRcc__t.html">Rcc_t</a></div><div class="ttdef"><b>Definition:</b> RCC.h:8</div></div>
+<div class="ttc" id="structGPIO__t_html"><div class="ttname"><a href="structGPIO__t.html">GPIO_t</a></div><div class="ttdef"><b>Definition:</b> GPIO.h:10</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.8-->

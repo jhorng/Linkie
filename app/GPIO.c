@@ -24,6 +24,11 @@ void configurePin(int mode, int pinNum, GPIO *port){
 	port->OSPEED &= ~(3 << (pinNum * 2));
 	port->OSPEED |= GPIO_HIGH_SPEED << (pinNum * 2);
 
+	//if(port->PUPDR == GPIO_MODE_INPUT){
+	//	port->PUPDR &= ~(3 << (pinNum * 2));
+	//	port->PUPDR |= GPIO_PULL_DOWN << (pinNum * 2);
+	//}
+
 	//PORTB->MODER = 0x04000000;
 	//PORTB->OTYPER = 0;
 	//PORTB->OSPEED = 0x20000000;
@@ -80,12 +85,18 @@ void writeOne(int pinNum, GPIO_TypeDef *port){
 */
 
 void writeOne(uint16_t pinNum, GPIO *port){
-	port->ODR &= ~( 1 << (pinNum));
-	port->ODR |= 1 << (pinNum);
+	//port->ODR &= ~( 1 << (pinNum));
+	//port->ODR |= 1 << (pinNum);
+	port->BSRR = ( 1 << (pinNum));
 }
 
 void writeZero(uint16_t pinNum, GPIO *port){
-	port->ODR &= ~( 1 << (pinNum));
-	port->ODR |= 0 << (pinNum);
+	//port->ODR &= ~( 1 << (pinNum));
+	//port->ODR |= 0 << (pinNum);
+	port->BSRR = ( 1 << (pinNum+16));
 }
 
+void pullUpDown(int pinNum, GPIO *port, int pull){
+	port->PUPDR &= ~(3 << (pinNum * 2));
+	port->PUPDR |= pull << (pinNum * 2);
+}

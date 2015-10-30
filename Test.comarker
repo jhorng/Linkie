@@ -18,13 +18,13 @@
 <attrib name="charStart" value="-1"/>
 <attrib name="path" value="/"/>
 <attrib name="charEnd" value="-1"/>
-<attrib name="org.eclipse.debug.core.enabled" value="true"/>
 <attrib name="org.eclipse.cdt.debug.core.ignoreCount" value="0"/>
+<attrib name="org.eclipse.debug.core.enabled" value="true"/>
 </marker>
 </breakpoint>
 <breakpoint enabled="true" persistant="true" registered="true">
 <resource path="/Test/main.c" type="1"/>
-<marker lineNumber="31" type="org.eclipse.cdt.debug.core.cLineBreakpointMarker">
+<marker lineNumber="34" type="org.eclipse.cdt.debug.core.cLineBreakpointMarker">
 <attrib name="enabled" value="true"/>
 <attrib name="org.eclipse.cdt.debug.core.condition" value=""/>
 <attrib name="org.eclipse.debug.core.id" value="org.eclipse.cdt.debug.core"/>
@@ -37,13 +37,13 @@
 <attrib name="registered" value="true"/>
 <attrib name="path" value="/Test/main.c"/>
 <attrib name="org.eclipse.cdt.debug.core.sourceHandle" value="C:\Users\D203C-01\CoIDE\workspace\Linkie\app\main.c"/>
-<attrib name="org.eclipse.cdt.debug.core.ignoreCount" value="0"/>
 <attrib name="org.eclipse.debug.core.enabled" value="true"/>
+<attrib name="org.eclipse.cdt.debug.core.ignoreCount" value="0"/>
 </marker>
 </breakpoint>
 <breakpoint enabled="false" persistant="true" registered="true">
 <resource path="/Test/GPIO.c" type="1"/>
-<marker lineNumber="35" type="org.eclipse.cdt.debug.core.cLineBreakpointMarker">
+<marker lineNumber="40" type="org.eclipse.cdt.debug.core.cLineBreakpointMarker">
 <attrib name="enabled" value="false"/>
 <attrib name="org.eclipse.cdt.debug.core.condition" value=""/>
 <attrib name="org.eclipse.debug.core.id" value="org.eclipse.cdt.debug.core"/>
@@ -57,8 +57,8 @@
 <attrib name="registered" value="true"/>
 <attrib name="path" value="/Test/GPIO.c"/>
 <attrib name="org.eclipse.cdt.debug.core.sourceHandle" value="C:\Users\D203C-01\CoIDE\workspace\Linkie\app\GPIO.c"/>
-<attrib name="org.eclipse.debug.core.enabled" value="false"/>
 <attrib name="org.eclipse.cdt.debug.core.ignoreCount" value="0"/>
+<attrib name="org.eclipse.debug.core.enabled" value="false"/>
 </marker>
 </breakpoint>
 </breakpoints>
